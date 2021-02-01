@@ -43,15 +43,18 @@ function doFinishAnimation(){
 function getInsertionSortAnimations(array){
     animations = []
     for (i = 1; i < array.length; i++){
-        anchor = array[i]
+        p = i
         j = i-1
-        while (j >= 0 && anchor < array[j]){
-            array[j+1] = array[j]
-            animations.push([j, j+1, array[j], array[j+1]])
+        while (j >= 0 && array[j] > array[p]){
+            tmp = array[j]
+            array[j] = array[p]
+            array[p] = tmp
+            animations.push([j, p, array[j], array[p]])
             j--
+            p--
         }
-        array[j+1] = anchor
     }
     animations.push("finished")
+    console.log(array)
     return(animations)
 }
