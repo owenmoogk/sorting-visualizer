@@ -1,0 +1,16 @@
+body{
+    justify-content: center;
+    align-items: center;
+}
+
+.array-containter{
+    height: 900px;
+    padding-top: 100px;
+}
+
+.array-bar{
+    width: 5px;
+    display: inline-block;
+    margin: 0 2px;
+    background-color: blue;
+}
