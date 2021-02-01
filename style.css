@@ -3,9 +3,11 @@ body{
     align-items: center;
 }
 
-.array-containter{
-    height: 900px;
-    padding-top: 100px;
+.array-container{
+    height: 700px;
+    padding-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .array-bar{
