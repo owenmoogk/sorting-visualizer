@@ -1,10 +1,53 @@
+function doMergeSort(){
+    animations = getMergeSortAnimations(numberset)
+	doMergeAnimations(animations)
+}
+
+function doMergeAnimations(animations){
+    for (let i = 0; i < animations.length; i++) {
+        const arrayBars = document.getElementsByClassName('array-bar');
+        setTimeout(() => {
+            if (animations[i] == "finished"){
+                doFinishAnimation()
+            }
+        }, i * animationSpeed);
+        const isColorChange = i % 3 !== 2;
+        if (isColorChange) {
+            const [barOneIdx, barTwoIdx] = animations[i];
+            const barOneStyle = arrayBars[barOneIdx].style;
+            const barTwoStyle = arrayBars[barTwoIdx].style;
+            const color = i % 3 === 0 ? INITCOLOR : SWAPCOLOR;
+            setTimeout(() => {
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+            }, i * animationSpeed);
+        } else {
+            setTimeout(() => {
+            const [barOneIdx, newHeight] = animations[i];
+            const barOneStyle = arrayBars[barOneIdx].style;
+            barOneStyle.height = `${newHeight}px`;
+			}, i * animationSpeed);
+        }
+	}
+}
+
+function doFinishAnimation(){
+    const arrayBars = document.getElementsByClassName("array-bar")
+    for (let i = 0; i < arrayBars.length; i++){
+        setTimeout(() => {
+            arrayBars[i].style.backgroundColor = FINALCOLOR
+        }, i * animationSpeed * 2)
+    }
+}
+
 function getMergeSortAnimations(array){
     animations = []
     if (array.length <= 1) return array
     auxArray = array.slice()
     mergeSortHelper(array, 0, array.length-1, auxArray, animations)
     // this is returning the queued up value of animations
-    return animations
+    animations.push("finished")
+    return(animations)
 }
 
 function mergeSortHelper(
@@ -27,8 +70,7 @@ function doMerge(
     middleIdx,
     endIdx,
     auxiliaryArray,
-    animations,
-  ) {
+    animations,) {
     let k = startIdx;
     let i = startIdx;
     let j = middleIdx + 1;
@@ -55,5 +97,9 @@ function doMerge(
         animations.push([j, j]);
         animations.push([k, auxiliaryArray[j]]);
         mainArray[k++] = auxiliaryArray[j++];
-        }
     }
+}
+
+function randomIntFromInterval(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
