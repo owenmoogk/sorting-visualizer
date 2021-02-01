@@ -31,15 +31,6 @@ function doBubbleAnimations(animations){
 	}
 }
 
-function doFinishAnimation(){
-    const arrayBars = document.getElementsByClassName("array-bar")
-    for (let i = 0; i < arrayBars.length; i++){
-        setTimeout(() => {
-            arrayBars[i].style.backgroundColor = FINALCOLOR
-        }, i * animationSpeed * 2)
-    }
-}
-
 function getBubbleSortAnimations(array){
     animations = []
     for (j = 0; j < array.length-1; j++){

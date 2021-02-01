@@ -31,15 +31,6 @@ function doMergeAnimations(animations){
 	}
 }
 
-function doFinishAnimation(){
-    const arrayBars = document.getElementsByClassName("array-bar")
-    for (let i = 0; i < arrayBars.length; i++){
-        setTimeout(() => {
-            arrayBars[i].style.backgroundColor = FINALCOLOR
-        }, i * animationSpeed * 2)
-    }
-}
-
 function getMergeSortAnimations(array){
     animations = []
     if (array.length <= 1) return array

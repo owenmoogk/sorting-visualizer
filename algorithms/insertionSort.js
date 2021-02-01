@@ -1,10 +1,10 @@
-function doSelectionSort(){
-    animations = getSelectionSortAnimations(numberset)
+function doInsertionSort(){
+    animations = getInsertionSortAnimations(numberset)
     console.log(animations)
-	doSelectionAnimations(animations)
+	doInsertionAnimations(animations)
 }
 
-function doSelectionAnimations(animations){
+function doInsertionAnimations(animations){
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar');
         setTimeout(() => {
@@ -31,32 +31,21 @@ function doSelectionAnimations(animations){
 	}
 }
 
-function doFinishAnimation(){
-    const arrayBars = document.getElementsByClassName("array-bar")
-    for (let i = 0; i < arrayBars.length; i++){
-        setTimeout(() => {
-            arrayBars[i].style.backgroundColor = FINALCOLOR
-        }, i * animationSpeed * 2)
-    }
-}
-
-function getSelectionSortAnimations(array){
+function getInsertionSortAnimations(array){
     animations = []
-    for (i = 0; i < array.length; i++){
-        lowest = array[i]
-        lowestIndex = i
-        for (j = i; j < array.length; j++){
-            if (array[j] < lowest){
-                lowest = array[j]
-                lowestIndex = j
-            }
-            animations.push([j,j, array[j], array[j]])
+    for (i = 1; i < array.length; i++){
+        p = i
+        j = i-1
+        while (j >= 0 && array[j] > array[p]){
+            tmp = array[j]
+            array[j] = array[p]
+            array[p] = tmp
+            animations.push([j, p, array[j], array[p]])
+            j--
+            p--
         }
-        tmp = array[i]
-        array[i] = array[lowestIndex]
-        array[lowestIndex] = tmp
-        animations.push([i, lowestIndex, array[i], array[lowestIndex]])
     }
     animations.push("finished")
+    console.log(array)
     return(animations)
 }
