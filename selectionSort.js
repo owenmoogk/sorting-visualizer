@@ -50,6 +50,7 @@ function getSelectionSortAnimations(array){
                 lowest = array[j]
                 lowestIndex = j
             }
+            animations.push([j,j, array[j], array[j]])
         }
         tmp = array[i]
         array[i] = array[lowestIndex]
