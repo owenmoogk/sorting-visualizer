@@ -2,22 +2,36 @@
     <head>
         <title>Sorting Visualizer</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
         <script src="main.js"></script>
         <script src="/algorithms/mergeSort.js"></script>
         <script src="/algorithms/bubbleSort.js"></script>
         <script src="/algorithms/insertionSort.js"></script>
         <script src="/algorithms/selectionSort.js"></script>
-        <script src="algorithms/optimizedSelectionSort.js"></script>
+        <script src="/algorithms/optimizedSelectionSort.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body onload="resetArray()">
         <div class="mybody">
-            <button onclick = "resetArray()">Generate new array</button>
-            <button onclick = "doMergeSort()">Merge Sort</button>
-            <button onclick = "doBubbleSort()">Bubble Sort</button>
-            <button onclick = "doInsertionSort()">Insertion Sort</button>
-            <button onclick = "doSelectionSort()">Selection Sort</button>
-            <button onclick = "doOptimizedSelectionSort()">Optimized Selection Sort</button>
+            <div class="topBar">
+                <button onclick = "resetArray()">Reset array</button>
+                <button onclick="doSort()">Go</button>
+                <select name="sort" id="multiplier">
+                    <option value="0.1">0.1x</option>
+                    <option value="0.5">0.5x</option>
+                    <option value="1" selected="selected">1x</option>
+                    <option value="2">2x</option>
+                    <option value="10">10x</option>
+                    <option value="100">100x</option>
+                </select>
+                <select name="sort" id="sorting-algorithm">
+                    <option value="merge">Merge Sort</option>
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="optimized-selection">Optimized Selection Sort</option>
+                </select>
+            </div>
             <div class= "array-container">
                 <br></br>
                 <div id="bars"></div>
