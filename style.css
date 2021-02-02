@@ -13,8 +13,6 @@ body{
 .array-container{
     height: 700px;
     padding-top: 5px;
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 .array-bar{
     width: 5px;
@@ -56,4 +54,21 @@ select option{
 }
 #multiplier{
     text-align: center;
+}
+input{
+    color: white;
+    font-size: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 150px;
+    border: 2px solid transparent;
+}
+input::placeholder{
+    color: lightgrey;
+}
+input:focus{
+    outline: transparent;
+}
+input:disabled{
+    color: lightgrey;
 }

@@ -14,7 +14,7 @@
     <body onload="resetArray()">
         <div class="mybody">
             <div class="topBar">
-                <button onclick="resetArray()" id="reset">Reset array</button>
+                <button onclick="resetArray()" id="reset">Randomize</button>
                 <button onclick="doSort()" id="go">Go</button>
                 <select id="multiplier">
                     <option value="0.1">0.1x</option>
@@ -31,9 +31,10 @@
                     <option value="selection">Selection Sort</option>
                     <option value="optimized-selection">Optimized Selection Sort</option>
                 </select>
+                <input type="text" value = "150" onchange="resetArray()" placeholder="Bars" id="numofbars">
             </div>
             <div class= "array-container">
-                <br></br>
+                <br>
                 <div id="bars"></div>
                 <br>
             </div>

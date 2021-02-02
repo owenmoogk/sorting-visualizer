@@ -7,11 +7,29 @@ animationSpeed = defaultAnimationSpeed
 numOfBars = 150 //number of bars in the array
 
 function resetArray(){
-    numberset = []
-    txt = ""
-    for (let i = 0; i < numOfBars; i++){
-        numberset.push(randomIntFromInterval(5, 600))
-        txt += "<div class='array-bar' style='height:"+numberset[i]+"px'></div>"
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    numOfBars = parseInt(document.getElementById("numofbars").value)
+    if (Number.isInteger(numOfBars) && numOfBars < vw/2 && numOfBars > 10){
+        numberset = []
+        txt = ""
+        width = Math.floor(vw / numOfBars)-2
+        margin = 1
+        if (width <= 1){
+            width = Math.floor(vw / numOfBars)
+            margin = 0
+        }
+        for (let i = 0; i < numOfBars; i++){
+            numberset.push(randomIntFromInterval(5, 600))
+            txt += "<div class='array-bar' style='height:"+numberset[i]+"px; width:"+width+"px; margin: 0 "+margin+"px'></div>"
+        }
+        document.getElementById("bars").innerHTML = txt
+        document.getElementById("numofbars").style.border = "none"
+    }
+    else{
+        document.getElementById("numofbars").style.border = "1px solid red"
+        return
+    }
+}
     }
     document.getElementById("bars").innerHTML = txt
 }
@@ -35,6 +53,7 @@ function enableButtons(){
     document.getElementById("sorting-algorithm").disabled = false
     document.getElementById("go").disabled = false
     document.getElementById("reset").disabled = false
+    document.getElementById("numofbars").disabled = false
 }
 
 function doSort(){
@@ -42,11 +61,11 @@ function doSort(){
     multiplier = document.getElementById("multiplier").value
     animationSpeed = defaultAnimationSpeed * (1/multiplier)
 
-
     document.getElementById("multiplier").disabled = true
     document.getElementById("sorting-algorithm").disabled = true
     document.getElementById("go").disabled = true
     document.getElementById("reset").disabled = true
+    document.getElementById("numofbars").disabled = true
 
     if (algorithm == "merge"){doMergeSort()}
     else if (algorithm == "bubble"){doBubbleSort()}
