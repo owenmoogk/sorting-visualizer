@@ -41,6 +41,9 @@ button{
 button:hover{
     color: lightgrey;
 }
+button:disabled{
+    color: lightgrey;
+}
 select{
     color: white;
     background-color: rgba(0, 0, 0, 0.2);

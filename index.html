@@ -14,9 +14,9 @@
     <body onload="resetArray()">
         <div class="mybody">
             <div class="topBar">
-                <button onclick = "resetArray()">Reset array</button>
-                <button onclick="doSort()">Go</button>
-                <select name="sort" id="multiplier">
+                <button onclick="resetArray()" id="reset">Reset array</button>
+                <button onclick="doSort()" id="go">Go</button>
+                <select id="multiplier">
                     <option value="0.1">0.1x</option>
                     <option value="0.5">0.5x</option>
                     <option value="1" selected="selected">1x</option>
@@ -24,7 +24,7 @@
                     <option value="10">10x</option>
                     <option value="100">100x</option>
                 </select>
-                <select name="sort" id="sorting-algorithm">
+                <select id="sorting-algorithm">
                     <option value="merge">Merge Sort</option>
                     <option value="bubble">Bubble Sort</option>
                     <option value="insertion">Insertion Sort</option>
@@ -35,7 +35,7 @@
             <div class= "array-container">
                 <br></br>
                 <div id="bars"></div>
-                <br/>
+                <br>
             </div>
         </div>
     </body>
