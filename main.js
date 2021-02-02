@@ -30,8 +30,32 @@ function resetArray(){
         return
     }
 }
+
+function reversedArray(){
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    numOfBars = parseInt(document.getElementById("numofbars").value)
+    if (Number.isInteger(numOfBars) && numOfBars < vw/2 && numOfBars > 10){
+        numberset = []
+        txt = ""
+        width = Math.floor(vw / numOfBars)-2
+        margin = 1
+        if (width <= 1){
+            width = Math.floor(vw / numOfBars)
+            margin = 0
+        }
+        for (let i = numOfBars; i > 5; i--){
+            numberset.push(i)
+        }
+        for (let i = 0; i < numOfBars; i++){
+            txt += "<div class='array-bar' style='height:"+numberset[i]+"px; width:"+width+"px; margin: 0 "+margin+"px'></div>"
+        }
+        document.getElementById("bars").innerHTML = txt
+        document.getElementById("numofbars").style.border = "none"
     }
-    document.getElementById("bars").innerHTML = txt
+    else{
+        document.getElementById("numofbars").style.border = "1px solid red"
+        return
+    }
 }
 
 function doFinishAnimation(){
@@ -53,6 +77,7 @@ function enableButtons(){
     document.getElementById("sorting-algorithm").disabled = false
     document.getElementById("go").disabled = false
     document.getElementById("reset").disabled = false
+    document.getElementById("reversedArray").disabled = false
     document.getElementById("numofbars").disabled = false
 }
 
@@ -65,6 +90,7 @@ function doSort(){
     document.getElementById("sorting-algorithm").disabled = true
     document.getElementById("go").disabled = true
     document.getElementById("reset").disabled = true
+    document.getElementById("reversedArray").disabled = true
     document.getElementById("numofbars").disabled = true
 
     if (algorithm == "merge"){doMergeSort()}
