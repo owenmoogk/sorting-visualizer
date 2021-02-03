@@ -2,6 +2,7 @@
     <head>
         <title>Sorting Visualizer</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="modal.css">
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
         <script src="main.js"></script>
         <script src="algorithms/mergeSort.js"></script>
@@ -12,9 +13,39 @@
         <script src="animations.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body onload="resetArray()">
-        <div class="mybody">
+    <body>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span onclick="closeModal()" class="close">&times;</span>
+                <h1>Sorting Algorithms</h1>
+                <p>I made this to show what is happening in each sorting algorithm, and to visualize them in action.</p>
+                <h3>Included:</h3>
+                <ul>
+                    <li>Merge Sort</li>
+                    <li>Bubble Sort</li>
+                    <li>Insertion Sort</li>
+                    <li>Selection Sort</li>
+                    <li>Optimized Selection Sort</li>
+                </ul>
+                <h3>To Come:</h3>
+                <ul>
+                    <li>Quick Sort</li>
+                    <li>Heap Sort</li>
+                </ul>
+                <h3>Notes</h3>
+                <p>
+                    Optimized selection sort is not really a well known sorting algorithm. I noticed that the
+                    common selection sort could also keep track of the highest index, therefore resulting
+                    in a time complexity cut in half. Obviously, merge sort and quick sort are still better,
+                    but it was fun to create my own algorithm.
+                </p>
+                <button onclick="closeModal()">Close</button>
+                <button onclick="noShowModal()">Don't show me again</button>
+            </div>  
+        </div>
+        <div class="main">
             <div class="topBar">
+                <button onclick="openModal()">Info</button>
                 <button onclick="resetArray()" id="reset">Randomize</button>
                 <button onclick="reversedArray()" id="reversedArray">Reversed Array</button>
                 <button onclick="doSort()" id="go">Go</button>
@@ -42,4 +73,7 @@
             </div>
         </div>
     </body>
+    <script>resetArray()</script>
+    <script src="modal.js"></script>
+    <script>modalOnOpen()</script>
 </html>

@@ -7,7 +7,7 @@ body{
     margin: 0;
     overflow: hidden;
 }
-.mybody{
+.main{
     text-align: center;
 }
 .array-container{
@@ -28,7 +28,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-button{
+.main button{
     border: 0px;
     background-color: rgba(0, 0, 0, 0);
     font-size: 20px;
@@ -36,10 +36,10 @@ button{
     border-radius: 5px;
     color: white;
 }
-button:hover{
+.main button:hover{
     color: lightgrey;
 }
-button:disabled{
+.main button:disabled{
     color: lightgrey;
 }
 select{
