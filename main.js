@@ -58,20 +58,6 @@ function reversedArray(){
     }
 }
 
-function doFinishAnimation(){
-    const arrayBars = document.getElementsByClassName("array-bar")
-    for (let i = 0; i < arrayBars.length; i++){
-        setTimeout(() => {
-            arrayBars[i].style.backgroundColor = FINALCOLOR
-        }, i * animationSpeed * 2)
-        setTimeout(() => {
-            if (i == arrayBars.length - 1){
-                enableButtons()
-            }
-        }, i * animationSpeed * 2)
-    }
-}
-
 function enableButtons(){
     document.getElementById("multiplier").disabled = false
     document.getElementById("sorting-algorithm").disabled = false
