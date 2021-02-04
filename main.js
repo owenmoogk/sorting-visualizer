@@ -1,10 +1,10 @@
 numberset = []
 INITCOLOR = 'blue'
 SWAPCOLOR = "red"
-FINALCOLOR = "#90EE90" //light green
-defaultAnimationSpeed = 5
-animationSpeed = defaultAnimationSpeed
-numOfBars = 150 //number of bars in the array
+FINALCOLOR = "#90EE90" // light green
+baseAnimationSpeed = 5
+animationSpeed = baseAnimationSpeed
+numOfBars = 150 // number of bars in the array
 
 function resetArray(){
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
@@ -70,7 +70,7 @@ function enableButtons(){
 function doSort(){
     algorithm = document.getElementById("sorting-algorithm").value
     multiplier = document.getElementById("multiplier").value
-    animationSpeed = defaultAnimationSpeed * (1/multiplier)
+    animationSpeed = baseAnimationSpeed * (1/multiplier)
 
     document.getElementById("multiplier").disabled = true
     document.getElementById("sorting-algorithm").disabled = true
@@ -80,6 +80,7 @@ function doSort(){
     document.getElementById("numofbars").disabled = true
 
     if (algorithm == "merge"){doMergeSort()}
+    else if (algorithm == "heap"){doHeapSort()}
     else if (algorithm == "bubble"){doBubbleSort()}
     else if (algorithm == "insertion"){doInsertionSort()}
     else if (algorithm == "selection"){doSelectionSort()}
