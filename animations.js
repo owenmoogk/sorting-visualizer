@@ -6,6 +6,9 @@ function doAnimations(animations){
                 doFinishAnimation()
             }
         }, i * animationSpeed);
+        if (animations[i] == "finished"){
+            break
+        }
         const barOneIndex = animations[i][0]
         const barTwoIndex = animations[i][1]
         const barOneHeight = animations[i][2]
