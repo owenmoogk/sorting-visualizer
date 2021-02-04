@@ -82,7 +82,7 @@ function doSort(){
 
     if (algorithm == "merge"){doMergeSort()}
     else if (algorithm == "heap"){doHeapSort()}
-    else if (algorithm == "quick"){doQuickSort()}
+    else if (algorithm == "hoare-quick"){doHoareQuickSort()}
     else if (algorithm == "bubble"){doBubbleSort()}
     else if (algorithm == "insertion"){doInsertionSort()}
     else if (algorithm == "selection"){doSelectionSort()}
