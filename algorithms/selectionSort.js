@@ -1,6 +1,5 @@
 function doSelectionSort(){
     animations = getSelectionSortAnimations(numberset)
-    console.log(animations)
 	doAnimations(animations)
 }
 

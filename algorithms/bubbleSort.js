@@ -1,6 +1,5 @@
 function doBubbleSort(){
     animations = getBubbleSortAnimations(numberset)
-    console.log(animations)
 	doAnimations(animations)
 }
 

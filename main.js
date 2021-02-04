@@ -1,4 +1,5 @@
 numberset = []
+animations = []
 INITCOLOR = 'blue'
 SWAPCOLOR = "red"
 FINALCOLOR = "#90EE90" // light green

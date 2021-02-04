@@ -1,6 +1,5 @@
 function doOptimizedSelectionSort(){
     animations = getOptimizedSelectionSortAnimations(numberset)
-    console.log(animations)
 	doAnimations(animations)
 }
 
@@ -36,6 +35,5 @@ function getOptimizedSelectionSortAnimations(array){
         animations.push([i, array.length-i-1, array[i], array[array.length-i-1]])
     }
     animations.push("finished")
-    console.log(array)
     return(animations)
 }

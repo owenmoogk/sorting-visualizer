@@ -1,7 +1,6 @@
 function doHeapSort(){
-    animations = getHeapSortAnimations(numberset)
-    console.log(animations)
-	doAnimations(animations)
+    getHeapSortAnimations(numberset)
+	doAnimations()
 }
 
 function getHeapSortAnimations(arr){
@@ -10,14 +9,12 @@ function getHeapSortAnimations(arr){
     for (i = Math.floor(length/2)-1; i > -1; i--){
         heapify(arr, length, i)
     }
-    console.log(arr)
     for (i = length-1; i > 0; i--){
         [arr[i], arr[0]] = [arr[0], arr[i]]
         animations.push([i, 0, arr[i], arr[0]])
         heapify(arr, i, 0)
     }
     animations.push("finished")
-    return(animations)
 }
 
 function heapify(arr, length, i){

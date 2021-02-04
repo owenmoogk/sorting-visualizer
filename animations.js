@@ -1,4 +1,4 @@
-function doAnimations(animations){
+function doAnimations(){
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar');
         setTimeout(() => {

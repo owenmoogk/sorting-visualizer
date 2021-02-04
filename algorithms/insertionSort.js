@@ -1,6 +1,5 @@
 function doInsertionSort(){
     animations = getInsertionSortAnimations(numberset)
-    console.log(animations)
 	doAnimations(animations)
 }
 
@@ -19,6 +18,5 @@ function getInsertionSortAnimations(array){
         }
     }
     animations.push("finished")
-    console.log(array)
     return(animations)
 }
