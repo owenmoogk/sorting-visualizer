@@ -10,7 +10,7 @@ numOfBars = 150 // number of bars in the array
 function resetArray(){
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     numOfBars = parseInt(document.getElementById("numofbars").value)
-    if (Number.isInteger(numOfBars) && numOfBars < vw/2 && numOfBars > 10){
+    if (Number.isInteger(numOfBars) && numOfBars < vw/2 && numOfBars > 1){
         numberset = []
         txt = ""
         width = Math.floor(vw / numOfBars)-2
@@ -35,7 +35,7 @@ function resetArray(){
 function reversedArray(){
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     numOfBars = parseInt(document.getElementById("numofbars").value)
-    if (Number.isInteger(numOfBars) && numOfBars < vw/2 && numOfBars > 10){
+    if (Number.isInteger(numOfBars) && numOfBars < vw/2 && numOfBars > 1){
         numberset = []
         txt = ""
         width = Math.floor(vw / numOfBars)-2
