@@ -6,6 +6,7 @@ FINALCOLOR = "#90EE90" // light green
 baseAnimationSpeed = 5
 animationSpeed = baseAnimationSpeed
 numOfBars = 150 // number of bars in the array
+soundsOn = true
 
 function resetArray(){
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
@@ -92,4 +93,15 @@ function doSort(){
 
 function randomIntFromInterval(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function toggleSounds(){
+    if (soundsOn){
+        document.getElementById("mute").innerHTML = "🔊"
+        soundsOn = false
+    }
+    else{
+        document.getElementById("mute").innerHTML = "🔈"
+        soundsOn = true
+    }
 }

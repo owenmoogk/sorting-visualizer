@@ -16,6 +16,7 @@ function doAnimations(){
         setTimeout(() => {
             arrayBars[barOneIndex].style.backgroundColor = SWAPCOLOR;
             arrayBars[barTwoIndex].style.backgroundColor = SWAPCOLOR;
+            playNote(barTwoHeight, animationSpeed)
         }, i * animationSpeed);
         setTimeout(() => {
             arrayBars[barOneIndex].style.height = `${barOneHeight}px`;
@@ -61,6 +62,8 @@ function doFinishAnimation(){
     for (let i = 0; i < arrayBars.length; i++){
         setTimeout(() => {
             arrayBars[i].style.backgroundColor = FINALCOLOR
+            barHeight = numberset[i]
+            playNote(barHeight, animationSpeed * 2)
         }, i * animationSpeed * 2)
         setTimeout(() => {
             if (i == arrayBars.length - 1){
